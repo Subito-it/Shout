@@ -1,4 +1,4 @@
-// swift-tools-version:5.0
+// swift-tools-version:5.8
 // Managed by ice
 
 import PackageDescription
@@ -6,17 +6,17 @@ import PackageDescription
 let package = Package(
     name: "Shout",
     platforms: [
-        .macOS(.v10_10)
+        .macOS(.v13)
     ],
     products: [
         .library(name: "Shout", targets: ["Shout"]),
     ],
     dependencies: [
-       .package(url: "https://github.com/Subito-it/BlueSocket", .branch("mendoza/stable")),
+        .package(url: "https://github.com/Subito-it/BlueSocket", branch: "mendoza/stable"),
     ],
     targets: [
         .systemLibrary(name: "CSSH", pkgConfig: "libssh2", providers: [.brew(["libssh2","openssl"])]),
-        .target(name: "Shout", dependencies: ["CSSH", "Socket"]),
+        .target(name: "Shout", dependencies: ["CSSH", .product(name: "Socket", package: "BlueSocket")]),
         .testTarget(name: "ShoutTests", dependencies: ["Shout"]),
     ]
 )
