@@ -1,4 +1,4 @@
-// swift-tools-version:4.0
+// swift-tools-version:5.8
 // Managed by ice
 
 import PackageDescription
@@ -9,7 +9,7 @@ let package = Package(
         .library(name: "Shout", targets: ["Shout"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/IBM-Swift/BlueSocket", from: "0.12.68"),
+        .package(url: "https://github.com/Subito-it/BlueSocket", revision: "c7b55a7"),
         .package(url: "https://github.com/jakeheis/CSSH", from: "1.0.3"),
     ],
     targets: [
