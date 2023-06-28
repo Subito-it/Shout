@@ -5,18 +5,9 @@
         "package": "Socket",
         "repositoryURL": "https://github.com/Subito-it/BlueSocket",
         "state": {
-          "branch": "c7b55a7",
-          "revision": "c7b55a7601868b72fb4990bb77a5f6419de94da7",
+          "branch": "mendoza/stable",
+          "revision": "de799eab110dd3086d9607ad81f0e10d13ea6347",
           "version": null
-        }
-      },
-      {
-        "package": "CSSH",
-        "repositoryURL": "https://github.com/jakeheis/CSSH",
-        "state": {
-          "branch": null,
-          "revision": "579a20508ab598f78713a60fed95706efd06bbcb",
-          "version": "1.0.3"
         }
       }
     ]
