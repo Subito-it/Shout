@@ -15,7 +15,7 @@ let package = Package(
         .package(url: "https://github.com/Subito-it/BlueSocket", branch: "mendoza/stable"),
     ],
     targets: [
-        .systemLibrary(name: "CSSH", pkgConfig: "libssh2", providers: [.brew(["libssh2","openssl"])]),
+        .systemLibrary(name: "CSSH", pkgConfig: "libssh2", providers: [.brew(["libssh2","openssl@3"])]),
         .target(name: "Shout", dependencies: ["CSSH", .product(name: "Socket", package: "BlueSocket")]),
         .testTarget(name: "ShoutTests", dependencies: ["Shout"]),
     ]
