@@ -28,13 +28,13 @@ public class SSH {
     public var ptyType: PtyType? = nil
     let sock: Socket
 
-    let session: Shout.Session
+    let session: Session
     weak var channel: Channel?
     
     public init(host: String, port: Int32 = 22) throws {
         do {
             self.sock = try Socket.create()
-            self.session = try Shout.Session()
+            self.session = try Session()
             
             session.blocking = 1
             try sock.connect(to: host, port: port)
@@ -141,23 +141,4 @@ public class SSH {
     public func terminate() throws {
         try channel?.close()
     }
-}
-
-// MARK: - Deprecations
-
-public extension SSH {
-    @available(*, deprecated, message: "SSH.Session has been renamed SSH")
-    public typealias Session = SSH
-    
-    @available(*, deprecated, message: "SSH.AuthMethod has been renamed SSHAuthMethod")
-    public typealias AuthMethod = SSHAuthMethod
-    
-    @available(*, deprecated, message: "SSH.Password has been renamed SSHPassword")
-    public typealias Password = SSHPassword
-    
-    @available(*, deprecated, message: "SSH.Agent has been renamed SSHAgent")
-    public typealias Agent = SSHAgent
-    
-    @available(*, deprecated, message: "SSH.Key has been renamed SSHKey")
-    public typealias Key = SSHKey
 }

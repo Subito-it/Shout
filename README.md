@@ -24,9 +24,13 @@ Add Shout as a dependency to your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/jakeheis/Shout", from: "0.4.0")
+    .package(url: "https://github.com/Subito-it/Shout.git", from: "0.4.0")
 ]
 ```
+
+## Mendoza
+
+This fork is used by [Mendoza](https://github.com/Subito-it/Mendoza) in order to statically link to libssh2. To generate the required libraries under /usr/local/lib run the [build script](https://github.com/Subito-it/Mendoza/blob/master/build_libs.rb).
 
 ## Usage
 
